@@ -7,3 +7,15 @@ def index(req):
 
 def about(req):
     return render(req, 'pages/about.html')
+
+def projects(req):
+    return render(req, 'pages/projects.html')
+
+def experience(req):
+    return render(req, 'pages/experience.html')
+
+def skill(req):
+    return render(req, 'pages/skill.html')
+
+def contact(req):
+    return render(req, 'pages/contact.html')
