@@ -1,0 +1,2 @@
+django==2.2.1  # https://www.djangoproject.com/
+pytz==2019.1  # https://github.com/stub42/pytz
