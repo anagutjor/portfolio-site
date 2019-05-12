@@ -28,8 +28,8 @@ img {
   border-radius: initial;
 }
 .card .box .img {
-  width:120px;
-  height:120px;
+  width:160px;
+  height:160px;
   margin:0 auto;
   border-radius:50%;
   overflow:hidden;
@@ -40,14 +40,40 @@ img {
 }
   
 .logo {
-  width: 80px; }
-
-.navbar {
-  opacity: 0.9;
-  text-transform: uppercase; }
+  width: 80px;
+}
 
 .social a {
-  margin-right: 0.4rem; }
+  margin-right: 0.4rem;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
 
 @media (max-width: 991px) {}
   

@@ -1,0 +1,13 @@
+.heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    height: 485px;
+}
+
+.btn {
+    position: absolute;
+    bottom: 35px;
+}

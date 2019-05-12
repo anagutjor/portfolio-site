@@ -1,5 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock %}
 
 {% block content %}
-<p>You can have a look at all my projects at <u><a href="https://github.com/anagutjor">my GitHub</a></u>.</p>
+<div class="heading animted fadeIn fast">
+    <p>You can have a look at all my projects at <u><a href="https://github.com/anagutjor">my GitHub</a></u>.</p>
+</div>
+
+<div class="row">
+{% for project in projects %}
+    <div class="col-md-4 animated fadeIn">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static project.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{% url 'project' project.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

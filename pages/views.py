@@ -1,16 +1,27 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from pages.models import Project
 
 def index(req):
-    #return HttpResponse('<h1>Hello World</h1>')
     return render(req, 'pages/index.html')
 
 def about(req):
     return render(req, 'pages/about.html')
 
 def projects(req):
-    return render(req, 'pages/projects.html')
+    projects = Project.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(req, 'pages/projects.html', context)
 
+def project(req, pk):
+    project = Project.objects.get(pk = pk)
+    context = {
+        'project': project
+    }
+    print(context)
+    return render(req, 'pages/project_detail.html', context)
+    
 def experience(req):
     return render(req, 'pages/experience.html')
 

@@ -20,6 +20,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about', views.about, name='about'),
     path('projects', views.projects, name='projects'),
+    path('projects/<int:pk>', views.project, name='project'),
     path('experience', views.experience, name='experience'),
     path('skill', views.skill, name='skill'),
     path('contact', views.contact, name='contact'),
