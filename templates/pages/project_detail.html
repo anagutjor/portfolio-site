@@ -13,9 +13,10 @@
     <div class="col-md-4 project_info animated fadeIn fast">
         <h5>About the project:</h5>
         <p>{{ project.description }}</p>
-        <br>
         <h5>Technologies used:</h5>
         <p>{{ project.technologies }}</p>
+        <p><b>Repository: </b><a target="_blank" href="{{project.url}}">{{ project.url }}</a></p>
+        <p><b>Date: </b>{{ project.date }}</p>
         <a href="{% url 'projects' %}"
             class="btn btn-primary">
             Go Back

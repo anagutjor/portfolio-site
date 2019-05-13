@@ -6,3 +6,5 @@ class Project(models.Model):
     description = models.TextField()
     technologies = models.TextField()
     image = models.FilePathField(path="/img")
+    url = models.CharField(max_length=100, default='')
+    date = models.CharField(max_length=100, default='2018')
