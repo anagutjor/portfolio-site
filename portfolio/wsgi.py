@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 from django.core.wsgi import get_wsgi_application
 
-project_folder = os.path.expanduser('~/django/personal-website') # You need to change this
+project_folder = os.path.expanduser('~/django/portfolio-site') # You need to change this
 load_dotenv(os.path.join(project_folder, '.env'))
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio.settings')
