@@ -16,6 +16,10 @@ img {
   border-radius: 50%;
 }
 
+.navbar {
+  margin-bottom: 30px;
+}
+
 .card .box {
   position:absolute;
   top:40%;

@@ -1,5 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p class="animated fadeIn fast" style="margin-top: 20px;">Only in production</p>
+{% if submitted %}
+    {% if send_error %}
+        <div class="animated fadeIn fast">
+            <h3>Message could not be sent.</h3>
+            <p>I apologize, we've caught an invalid header error.</p>
+            <p>Please email me directly at <a href="mailto:anagutjor@gmail.com">anagutjor@gmail.com</a></p>
+            <p>Thanks!</p>
+        </div>
+    {% else %}
+        <div class="animated fadeIn fast">
+            <h3>Message sent.</h3>
+            <p>Thank you!</p>
+            <p>I will get back to you as soon as I can.</p>
+        </div>
+    {% endif %}
+
+    {% else %}
+        <div class="animated fadeIn fast">
+            <form action="/contact" method="POST">
+            {% csrf_token %}
+                {% if form.subject.errors %}
+                    <ol>
+                        {% for error in form.subject.errors %}
+                            <li><strong>{{ error|escape }}</strong></li>
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+
+                {% for field in form %}
+                    <div class="fieldWrapper form-group">
+                    {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
+                    {{ field }}
+                    {% if field.label == 'Your message' %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            <input type="submit" class="btn btn-primary mb-2" value="Submit" />
+            </form>
+        </div>
+    {% endif %}
 {% endblock %}
