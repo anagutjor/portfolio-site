@@ -1,7 +1,11 @@
-let canvas = document.getElementById('gandalf');
+let canvas = document.createElement('canvas');
+canvas.width = 800;
+canvas.height = 800;
+canvas.className = 'gandalf';
+let context = canvas.getContext('2d');
+
 let reggae = new Audio(src='/static/sounds/The Maytals - Do The Reggay.mp3');
 let recordScratch = new Audio(src='/static/sounds/record_scratch.mp3');
-let context = canvas.getContext('2d');
 let gandalf = new Image();
 gandalf.src = '/static/img/gandalf.png';
 gandalf.style['border-radius'] = "0px";
@@ -66,7 +70,6 @@ let count = 0; // keep count of how many times puffsLine is triggered
 setTimeout( () => {
     canvas.addEventListener( ('click'), () => {
         clearInterval(intervalTyping); // clear before to prevent weird line interferences
-        setTimeout( () => {}, 1000); // sleep
         typing(puffsLine)
         count++;
         if ( count === 7 ) {
@@ -78,6 +81,7 @@ setTimeout( () => {
 }, 26000)
 
 setTimeout( () => {
+    container[0].appendChild(canvas);
     flipHorizontally( gandalf, -70, 50);
     container[0].insertBefore(dialogBubble, container.firstChild);
     typing(firstLine);

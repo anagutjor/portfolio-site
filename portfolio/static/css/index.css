@@ -1,3 +1,10 @@
+.gandalf {
+    z-index: 1000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 .dialogBubble {
     z-index: 1000;
     width: 400px;
@@ -7,3 +14,31 @@
     transform: translate(300px, 100px);
     padding: 5px;
 }
+
+@media (max-width: 991px) {
+    .dialogBubble {
+        width: 300px;
+    }
+}
+  
+@media (max-width: 768px) {
+    .gandalf {
+        width: 730px;
+    }
+
+    .dialogBubble {
+        width: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gandalf {
+        width: 670px;
+        height: 800px;
+    }
+
+    .dialogBubble {
+        width: 120px;
+    }
+}
+
