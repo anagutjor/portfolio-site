@@ -34,6 +34,11 @@ python manage.py runserver
 ```
 Et voilà!
 
+PS: I also added the `init.sh` script for the three commands you need to run everytime you open the folder and need to set Django up. So after the first time you run this program, you should be fine by just doing
+```
+./init.sh
+```
+
 # Run with Docker
 
 Inside the directory, do:
