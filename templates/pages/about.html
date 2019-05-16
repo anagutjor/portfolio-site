@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container animated fadeIn fast">
     <p style="margin-top: 20px;">I was born in a rainy night in my beautiful hometown of Sevilla. Where I still currently live (it is a good place to live in. Only summers are way too hot, but the human body gets used to anything, this is true). OK, what I was talking about... exactly, this is an about me page, so I was talking about me and my life. So yes, I was born one rainy night here in my hometown, Sevilla. And well, I lived, I grew up, I got into many things, one of them being code. And here I am, typing as I tell the story of my life in the black screen of Visual Studio Code. Quite interesting, hm?</p>
     <p>So... hire me!</p>
 </div>
+<script src="{% static 'js/rain.js' %}"></script>
 {% endblock %}

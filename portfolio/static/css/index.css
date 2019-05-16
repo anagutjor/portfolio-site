@@ -1,0 +1,9 @@
+.dialogBubble {
+    z-index: 1000;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    border: solid rgba(16, 40, 78, 0.6);
+    transform: translate(300px, 100px);
+    padding: 5px;
+}
