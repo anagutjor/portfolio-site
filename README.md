@@ -49,4 +49,4 @@ docker run -p 8000:8000 <name-you-want-for-the-image>
 
 # See in production
 
-http://anagutjor-portfolio.herokuapp.com/
+https://devana.ml
